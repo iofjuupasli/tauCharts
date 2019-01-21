@@ -1,3 +1,5 @@
+const {resolve} = require('path');
+
 module.exports = {
     rules: [
         {
@@ -8,7 +10,7 @@ module.exports = {
             loader: 'ts-loader',
             test: /\.(js|ts)$/,
             exclude: [
-                'node_modules',
+                resolve(__dirname, '../node_modules'),
             ],
             options: {
                 compilerOptions: {

@@ -1,3 +1,5 @@
+const {resolve} = require('path');
+
 module.exports = function (config) {
 
     const DEBUG = Boolean(config.tauchartsDebug);
@@ -86,8 +88,7 @@ function getTestWebpackConfig(DEBUG) {
                     loader: 'ts-loader',
                     test: /\.(js|ts)$/,
                     exclude: [
-                        'node_modules',
-                        'node_modules'
+                        resolve(__dirname, './node_modules'),
                     ],
                     options: {
                         compilerOptions: {
